@@ -7,13 +7,161 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <style>
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #fff;
+	background-attachment: fixed; 
+	background-repeat: no-repeat; 
+	background-position: center top;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+  	font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    position: fixed;
+    width: 100dvw;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    background-color: #26602b;
+    color: #e81411;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    height: calc(100% - 20px);
+    aspect-ratio: 7/5;
+    background: url('/media/icons/i0003.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: auto;
+    margin: 10px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 100%;
+    padding-right: 10px;
+    font-weight: 600;
+}
+
+.dropbtn i {
+    transition: transform .3s ease;
+}
+
+.dropdown.active .dropbtn i {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: #429649;
+
+    overflow: hidden;
+
+    max-height: 0;
+    opacity: 0;
+
+    transition:
+        max-height .35s ease,
+        opacity .25s ease;
+
+    z-index: 999;
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+}
+
+.dropdown.active .dropdown-content {
+    max-height: 400px;
+    opacity: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 18px 40px;
+    color: #000;
+    text-decoration: none;
+    transition: background .2s;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background: #58b961;
+}
+
+.main-photo {
+    width: 100dvw;
+    height: 100dvh;
+    background: url('/media/photos/p0002.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
     </style>
 </head>
 <body>
     <div class="navbar">
-        <div class="nav-logo"></div>
-        <div class="nav-switch"></div>
+        <a class="nav-logo" href="/pomidorek"></a>
+        <div class="dropdown">
+            <button class="dropbtn">SERWISY
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/pomidorek/sklep/">SKLEP</a>
+                <a href="/pomidorek/kpc/">KPC</a>
+                <a href="/pomidorek/rkj/">RKJ</a>
+            </div>
+        </div> 
     </div>
+    <div class="main-photo"></div>
+
+<script>
+const dropdown = document.querySelector(".dropdown");
+const button = dropdown.querySelector(".dropbtn");
+const menu = dropdown.querySelector(".dropdown-content");
+
+button.addEventListener("click", function(e) {
+    e.stopPropagation();
+    dropdown.classList.toggle("active");
+});
+
+menu.addEventListener("click", function(e) {
+    e.stopPropagation();
+});
+
+document.addEventListener("click", function() {
+    dropdown.classList.remove("active");
+});
+
+menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        dropdown.classList.remove("active");
+    });
+});
+</script>
+
 </body>
 </html>
