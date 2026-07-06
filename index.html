@@ -6,137 +6,230 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <style>
-html {
-	scroll-behavior: smooth;
-}
-
-body {
-	background-color: #fff;
-	background-attachment: fixed; 
-	background-repeat: no-repeat; 
-	background-position: center top;
-	display: flex;
-	flex-direction: column;
-	overflow-x: hidden;
-  	font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar {
-    position: fixed;
-    width: 100dvw;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    background-color: #26602b;
-    color: #e81411;
-    justify-content: space-between;
-}
-
-.nav-logo {
-    height: calc(100% - 20px);
-    aspect-ratio: 7/5;
-    background: url('/media/icons/i0003.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-right: auto;
-    margin: 10px;
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropbtn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: inherit;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    height: 100%;
-    padding-right: 10px;
-    font-weight: 600;
-}
-
-.dropbtn i {
-    transition: transform .3s ease;
-}
-
-.dropdown.active .dropbtn i {
-    transform: rotate(180deg);
-}
-
-.dropdown-content {
-    position: fixed;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    background: #429649;
-
-    overflow: hidden;
-
-    max-height: 0;
-    opacity: 0;
-
-    transition:
-        max-height .35s ease,
-        opacity .25s ease;
-
-    z-index: 999;
-    box-shadow: 0 10px 20px rgba(0,0,0,.15);
-}
-
-.dropdown.active .dropdown-content {
-    max-height: 400px;
-    opacity: 1;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 18px 40px;
-    color: #000;
-    text-decoration: none;
-    transition: background .2s;
-    text-align: center;
-}
-
-.dropdown-content a:hover {
-    background: #58b961;
-}
-
-.main-photo {
-    width: 100dvw;
-    height: 100dvh;
-    background: url('/media/photos/p0002.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="navbar">
-        <a class="nav-logo" href="/pomidorek"></a>
+        <a class="nav-logo" href="/pomidorek" style="background-image: url('/media/icons/i0003.png'); aspect-ratio: 7/5;"></a>
         <div class="dropdown">
             <button class="dropbtn">SERWISY
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="/pomidorek/sklep/">SKLEP</a>
+                <a href="#sklep">SKLEP</a>
                 <a href="/pomidorek/kpc/">KPC</a>
                 <a href="/pomidorek/rkj/">RKJ</a>
             </div>
         </div> 
     </div>
-    <div class="main-photo"></div>
+    <section class="hero" style="background:url('/media/photos/p0002.jpg') center/cover fixed;">
+        <div class="intro-box">
+            <h2>Pomidorek</h2>
+            <p>
+                W naszej ofercie znajdą Panstwo dobrej jakości ketchupy. Produkcja odbywa się w Polsce. Większość procesów odbywa się automatycznie, ale stawiamy na połączenie pracy ręcznej usprawnionej o technologię, dzięki czemu mogą Państwo cieszyć się najwyższą jakością. Poniżej znajdą Państwo naszą ofertę sprzedażową.
+            </p>
+            <p>Znajdą tam Państwo nie tylko ketchupy, ale również spinacze do prania czy odzież jeansową.</p>
+            <p><a href="#sklep" style="text-decoration: none; color: #e81411; font-weight: bold;">Przejdź do sklepu >>></a></p>
+        </div>
+    </section>
+    <section class="store" style="position: relative;">
+        <div id="sklep" style="position: absolute; top:-100px;"></div>
+        <div class="store-container">
+            <h1>Sklep internetowy marki Pomidorek™</h1>
+            <div class="shop-content">
+                <div class="shop-item">
+                    <img src="/media/photos/p0003.jpg">
+                    <div class="shop-item-text">
+                        <div class="shop-item-txt">
+                            <h2>Ketchup Pomidorek™ łagodny 1L</h2>
+                            <h1>9,99 zł / 1L</h1>
+                            <p>20 × 1L: <span style="color:#e81411">149,99 zł</span> (7,50z zł / 1L │ -25%)</p>
+                            <div class="option-group">
+                                <input type="radio" name="pack-product1" id="pack1-1" checked>
+                                <label for="pack1-1">1L</label>
+                                <input type="radio" name="pack-product1" id="pack1-20">
+                                <label for="pack1-20">20 × 1L</label>
+                            </div>
+                        </div>
+                        <a href="#sklep" class="add-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> DO KOSZYKA</a>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <img src="/media/photos/p0004.jpg">
+                    <div class="shop-item-text">
+                        <div class="shop-item-txt">
+                            <h2>Ketchup Pomidorek™ pikantny 1L</h2>
+                            <h1>9,99 zł / 1L</h1>
+                            <p>20 × 1L: <span style="color:#e81411">149,99 zł</span> (7,50z zł / 1L │ -25%)</p>
+                            <div class="option-group">
+                                <input type="radio" name="pack-product2" id="pack2-1" checked>
+                                <label for="pack2-1">1L</label>
+                                <input type="radio" name="pack-product2" id="pack2-20">
+                                <label for="pack2-20">20 × 1L</label>
+                            </div>
+                        </div>
+                        <a href="#sklep" class="add-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> DO KOSZYKA</a>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <img src="/media/photos/p0005.jpg">
+                    <div class="shop-item-text">
+                        <div class="shop-item-txt">
+                            <h2>Spinacze do prania 100 sztuk</h2>
+                            <h1>29,99 zł / 100 szt.</h1>
+                            <p><span style="color:#e81411">30 gr</span> / 1 szt.</p>
+                            <div class="option-group">
+                                <input type="radio" name="pack-product3" id="pack3-1" checked>
+                                <label for="pack3-1">100 sztuk</label>
+                            </div>
+                        </div>
+                        <a href="#sklep" class="add-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> DO KOSZYKA</a>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <img src="/media/photos/p0008.jpg" class="product-image">
+                    <div class="shop-item-text">
+                        <div class="shop-item-txt">
+                            <h2>Spodnie jeansowe baggy</h2>
+                            <h1>49,99 zł</h1>
+                            <div class="option-group2">
+                                <p>Kolor:</p>
+                                <button
+                                    class="color-option"
+                                    data-image="/media/photos/p0006.jpg"
+                                    style="background:#204f8f;">
+                                </button>
+                                <button
+                                    class="color-option"
+                                    data-image="/media/photos/p0007.jpg"
+                                    style="background:#6bb4df;">
+                                </button>
+                                <button
+                                    class="color-option active"
+                                    data-image="/media/photos/p0008.jpg"
+                                    style="background:#000;">
+                                </button>
+                                <button
+                                    class="color-option"
+                                    data-image="/media/photos/p0009.jpg"
+                                    style="background:#6d6d6d;">
+                                </button>
+                            </div>
+                            <div class="option-group">
+                                <p>Rozmiar:</p>
+                                <input type="radio" name="pack-product4" id="pack4-S">
+                                <label for="pack4-S">S</label>
+                                <input type="radio" name="pack-product4" id="pack4-M">
+                                <label for="pack4-M">M</label>
+                                <input type="radio" name="pack-product4" id="pack4-L" checked>
+                                <label for="pack4-L">L</label>
+                                <input type="radio" name="pack-product4" id="pack4-XL">
+                                <label for="pack4-XL">XL</label>
+                            </div>
+                        </div>
+                        <a href="#sklep" class="add-button">
+                            <i class="fa fa-shopping-cart"></i>
+                            DO KOSZYKA
+                        </a>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <img src="/media/photos/p0013.jpg" class="product-image">
+                    <div class="shop-item-text">
+                        <div class="shop-item-txt">
+                            <h2>Spodnie jeansowe regular</h2>
+                            <h1>39,99 zł</h1>
+                            <div class="option-group2">
+                                <p>Kolor:</p>
+                                <button
+                                    class="color-option"
+                                    data-image="/media/photos/p0010.jpg"
+                                    style="background:#204f8f;">
+                                </button>
+                                <button
+                                    class="color-option"
+                                    data-image="/media/photos/p0011.jpg"
+                                    style="background:#6bb4df;">
+                                </button>
+                                <button
+                                    class="color-option"
+                                    data-image="/media/photos/p0012.jpg"
+                                    style="background:#000;">
+                                </button>
+                                <button
+                                    class="color-option active"
+                                    data-image="/media/photos/p0013.jpg"
+                                    style="background:#6d6d6d;">
+                                </button>
+                            </div>
+                            <div class="option-group">
+                                <p>Rozmiar:</p>
+                                <input type="radio" name="pack-product5" id="pack5-S">
+                                <label for="pack5-S">S</label>
+                                <input type="radio" name="pack-product5" id="pack5-M">
+                                <label for="pack5-M">M</label>
+                                <input type="radio" name="pack-product5" id="pack5-L" checked>
+                                <label for="pack5-L">L</label>
+                                <input type="radio" name="pack-product5" id="pack5-XL">
+                                <label for="pack5-XL">XL</label>
+                            </div>
+                        </div>
+                        <a href="#sklep" class="add-button">
+                            <i class="fa fa-shopping-cart"></i>
+                            DO KOSZYKA
+                        </a>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <img src="/media/photos/p0014.jpg" class="product-image">
+                    <div class="shop-item-text">
+                        <div class="shop-item-txt">
+                            <h2>Kurtka jeansowa regular</h2>
+                            <h1>44,99 zł</h1>
+                            <div class="option-group2">
+                                <p>Kolor:</p>
+                                <button
+                                    class="color-option active"
+                                    data-image="/media/photos/p0014.jpg"
+                                    style="background:#204f8f;">
+                                </button>
+                                <button
+                                    class="color-option"
+                                    data-image="/media/photos/p0015.jpg"
+                                    style="background:#6bb4df;">
+                                </button>
+                                <button
+                                    class="color-option"
+                                    data-image="/media/photos/p0016.jpg"
+                                    style="background:#000;">
+                                </button>
+                                <button
+                                    class="color-option"
+                                    data-image="/media/photos/p0017.jpg"
+                                    style="background:#6d6d6d;">
+                                </button>
+                            </div>
+                            <div class="option-group">
+                                <p>Rozmiar:</p>
+                                <input type="radio" name="pack-product6" id="pack6-S">
+                                <label for="pack6-S">S</label>
+                                <input type="radio" name="pack-product6" id="pack6-M">
+                                <label for="pack6-M">M</label>
+                                <input type="radio" name="pack-product6" id="pack6-L" checked>
+                                <label for="pack6-L">L</label>
+                                <input type="radio" name="pack-product6" id="pack6-XL">
+                                <label for="pack6-XL">XL</label>
+                            </div>
+                        </div>
+                        <a href="#sklep" class="add-button">
+                            <i class="fa fa-shopping-cart"></i>
+                            DO KOSZYKA
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <script>
 const dropdown = document.querySelector(".dropdown");
@@ -160,6 +253,45 @@ menu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
         dropdown.classList.remove("active");
     });
+});
+</script>
+
+<script>
+const box = document.querySelector(".intro-box");
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            box.classList.add("show");
+        }
+    });
+},{
+    threshold:0.4
+});
+
+observer.observe(box);
+</script>
+
+<script>
+document.querySelectorAll(".shop-item").forEach(product => {
+
+    const image = product.querySelector(".product-image");
+    const buttons = product.querySelectorAll(".color-option");
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            buttons.forEach(btn => btn.classList.remove("active"));
+
+            button.classList.add("active");
+
+            image.src = button.dataset.image;
+
+        });
+
+    });
+
 });
 </script>
 
